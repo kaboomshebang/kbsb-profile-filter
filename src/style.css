@@ -1,0 +1,79 @@
+/* some basic kbsb styles */
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif; /* weights: 300 400 600*/
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* typography */
+/* =================================================== */
+
+.paragraph {
+    line-height: 150%;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 ,h5, h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    max-width: 35rem;
+    /* rem units scale to the document-root/html element */
+}
+
+h1 {
+    font-size: 1.5em;
+    /* em units scale to the parent element */
+}
+
+h2, h3 {
+    font-size: 1.25em;
+}
+
+a {
+    color: lightgrey;
+}
+
+/* navigation styles */
+/* =================================================== */
+
+.nav {
+    padding: 1rem 0 0 0;
+}
+
+.logo-kaboom {
+    max-width: 10rem;
+}
+
+/* footer styles */
+/* =================================================== */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0.5rem;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: lightgrey;
+}
+
+.logo-shebang {
+    position: fixed;
+    display: block;
+    max-width: 3.5rem;
+    right: 0;
+    bottom: 1rem;
+}
