@@ -22,18 +22,23 @@ class Developer {
 // create an async function that fetches json
 // fetchData() returns a promise
 async function fetchData(url: string) {
-	const res = await fetch(url);
-	return await res.json();
+	// use try catch instead of .catch()
+	try {
+		const res = await fetch(url);
+		const data = await res.json();
+		//// return await res.json();
+		// you can return the function and use .then()
+		// or instead just continue with the program logic
+
+		createDev(data.developers);
+	} catch (err) {
+		console.log('Error:', err);
+	}
 }
 
 // call fetchData and handle the promise
 // chain two .then() methods to get the json data
-fetchData(url)
-	.then((e) => e)
-	.then((e) => {
-		//! do you have to call a function to get the data out of the promise?
-		createDev(e.developers);
-	});
+fetchData(url);
 
 let devs: Developer[] = [];
 

@@ -10,7 +10,7 @@ tsc --watch
 
 ## Todo
 
-- [ ] Add error handling for fetch()
+- [X] Add error handling for fetch()
 - [ ] Finish the dev class
 - [ ] Create class for the dev skills
 - [ ] Add logic for the filter states
