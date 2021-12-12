@@ -1,3 +1,5 @@
+import fetchData from 'fetch';
+
 // location of prof data
 const url: string = 'data.json';
 
@@ -40,26 +42,13 @@ class Developer {
 	}
 }
 
-// create an async function that fetches json
-// fetchData() returns a promise
-async function fetchData(url: string) {
-	// use try catch instead of .catch()
-	try {
-		const res = await fetch(url);
-		const data = await res.json();
-		//// return await res.json();
-		// you can return the function and use .then() outside the function
-		// or instead just continue with the program logic
+// fetch json
+fetchData(url).then((e) => {
+	console.log(e);
 
-		createDevs(await data.developers);
-		createFilter(await data.developers);
-	} catch (err) {
-		console.log('Error:', err);
-	}
-}
-
-// start execution
-fetchData(url);
+	// createDevs(await data.developers);
+	// createFilter(await data.developers);
+});
 
 const fltr: Filter = { skills: [], active: false };
 const devs: Developer[] = [];
