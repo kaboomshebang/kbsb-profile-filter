@@ -1,3 +1,5 @@
+import data from './data.json';
+
 // location of prof data
 const url: string = 'data.json';
 
