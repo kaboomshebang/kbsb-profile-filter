@@ -1,11 +1,6 @@
 // store data as .ts file and export constant
 import data from './data.js';
 
-console.log(data);
-
-// location of prof data
-const url: string = 'data.json';
-
 // a map of all the unique skills
 // value represents the filter state // default false (inactive)
 const skills = new Map<string, boolean>();
@@ -45,59 +40,34 @@ class Developer {
 	}
 }
 
-// create an async function that fetches json
-// fetchData() returns a promise
-async function fetchData(url: string) {
-	// use try catch instead of .catch()
-	try {
-		const res = await fetch(url);
-		const data = await res.json();
-		//// return await res.json();
-		// you can return the function and use .then() outside the function
-		// or instead just continue with the program logic
-
-		createDevs(await data.developers);
-		createFilter(await data.developers);
-	} catch (err) {
-		console.log('Error:', err);
-	}
-}
-
-// start execution
-fetchData(url);
+console.log(data.developers);
 
 const fltr: Filter = { skills: [], active: false };
 const devs: Developer[] = [];
 
-async function createDevs(jsonData: Dev[]) {
-	jsonData.forEach((e) => {
+createDevs(data.developers);
+createFilter(data.developers);
+
+function createDevs(d: Dev[]) {
+	d.forEach((e) => {
 		devs.push(new Developer(e));
 	});
 }
 
-async function createFilter(jsonData: Dev[]) {
-	jsonData.forEach((e: Dev) => {
+// create the map with all the filters
+function createFilter(d: Dev[]) {
+	d.forEach((e: Dev) => {
 		e.skills.forEach((sk: string) => {
 			skills.set(sk, false);
 		});
 	});
-	console.log('fdfdsfdsfdfd', skills);
 }
 
-async function addFilters(skills: Map<string, boolean>) {
-	let skls: skill[] = [];
+// add all the filters to the Filter object
+function addFilters(skills: Map<string, boolean>) {
 	let id: number = 0;
-	console.log('T1', skills);
 	// convert map of unique skills to skill[]
-	for (let test of skills) {
-		console.log('TETS', test);
-	}
-
-	let test = skills.entries();
-	console.log('T3', test);
 	for (let [skl, act] of skills.entries()) {
-		console.log('TTEST');
-		console.log('T2', skl, act);
 		fltr.skills.push({ id: id, name: skl, active: act });
 		id++;
 	}
@@ -105,6 +75,6 @@ async function addFilters(skills: Map<string, boolean>) {
 
 addFilters(skills);
 
-console.log(fltr);
+console.log('Filter obeject', fltr);
 console.log('Devs: ', devs);
-console.log('SKILLS', skills);
+console.log('Skills', skills);
