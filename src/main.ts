@@ -1,6 +1,6 @@
 // store data as .ts file and export constant
 import data from './data.js';
-import './style.css';
+// import './style.css';
 
 // a map of all the unique skills
 // value represents the filter state // default false (inactive)
