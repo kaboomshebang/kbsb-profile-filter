@@ -1,4 +1,7 @@
-import data from './data.json';
+// store data as .ts file and export constant
+import data from './data.js';
+
+console.log(data);
 
 // location of prof data
 const url: string = 'data.json';
