@@ -65,7 +65,7 @@ Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `m
 - [X] ~~Add error handling for fetch()~~
 - [X] Create class for the dev skills
 - [X] Add Typescript as dev-dep
+- [X] Optional: add Vite
 - [ ] Add methods and logic for the filter states
 - [ ] Create the filter and developer DOM elements
 - [ ] Add styling and basic animations
-- [ ] Optional: add Vite
