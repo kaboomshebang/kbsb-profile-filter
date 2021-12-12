@@ -1,13 +1,61 @@
 # kbsb Profile Filter
 
-A profile webpage with filter functionality. URL coming soon.
+A profile webpage with filter functionality using Typescript, Vite and PNPM.
 
 - Uses `pnpm`
 - URL coming soon.
 
 ```bash
+# install dependencies (Typescript, Vite)
+pnpm install
+# or, `npm install`
+
+# run Vite with PNPM
+pnpm run dev # or, `npm run dev` when using NPM
+
+# or, you can also just run Vite
+vite
+# or, `vite dev`
+# or, `vite serve`
+
+# without Vite: just watch for source changes with the Typescript compiler
 tsc --watch
 ```
+
+## Typescript version
+
+The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript": "^4.5.3"`.
+
+```js
+// "typescript": "^4.4.4",
+```
+
+## Vite tsconfig.json settings
+
+Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `module resolution strategy`.
+
+```json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
+  },
+  "include": ["./src"]
+}
+```
+
 
 ## Todo
 
@@ -21,4 +69,3 @@ tsc --watch
 - [ ] Create the filter and developer DOM elements
 - [ ] Add styling and basic animations
 - [ ] Optional: add Vite
-  
