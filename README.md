@@ -16,3 +16,5 @@ tsc --watch
 - [ ] Add methods and logic for the filter states
 - [ ] Create the filter and developer DOM elements
 - [ ] Add styling and basic animations
+- [ ] Optional: add Vite
+  
