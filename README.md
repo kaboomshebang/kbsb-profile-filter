@@ -32,6 +32,8 @@ The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript
 
 ## Vite tsconfig.json settings
 
+Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `module resolution strategy`.
+
 ```json
 {
   "compilerOptions": {
@@ -43,6 +45,7 @@ The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript
     "strict": true,
     "sourceMap": true,
     "resolveJsonModule": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "noEmit": true,
     "noUnusedLocals": true,
@@ -52,6 +55,7 @@ The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript
   "include": ["./src"]
 }
 ```
+
 
 ## Todo
 
