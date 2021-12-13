@@ -9,6 +9,7 @@ import './components/filterButton';
 import './components/navBar';
 import './components/footer';
 import './components/footerShebang';
+import './components/profile';
 
 // a map of all the unique skills
 // value represents the filter state // default false (inactive)
@@ -17,8 +18,7 @@ const skills = new Map<string, boolean>();
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
 app.innerHTML = `
-<h1>Hello Vite!</h1>
-<a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
+<kbsb-profile></kbsb-profile>
 `;
 
 type skill = {
