@@ -1,6 +1,3 @@
-// import styles
-import navBarCss from './navBar.css';
-
 // create a class for the element
 class Navigation extends HTMLElement {
 	constructor() {
@@ -33,16 +30,23 @@ class Navigation extends HTMLElement {
 
 		// Create some CSS to apply to the shadow dom
 		const style = document.createElement('style');
-		console.log('Style connected:', style.isConnected);
 
-		style.textContent = navBarCss;
+		style.textContent = `
+		nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 1rem 0 0 0;
+		}
+		
+		.logo-kaboom {
+			max-width: 10rem;
+		}
+		`;
 
 		// attach the styles to the shadow dom
 		shadow.appendChild(style);
 		// attach the top element to the shadow dom
 		shadow.appendChild(nav);
-
-		console.log('Style connected:', style.isConnected);
 	}
 }
 

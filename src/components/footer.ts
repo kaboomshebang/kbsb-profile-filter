@@ -60,18 +60,14 @@ class Footer extends HTMLElement {
 
 		// Create some CSS to apply to the shadow dom
 		const style = document.createElement('style');
-		console.log('Style connected:', style.isConnected);
 
 		style.textContent = footerCss;
 
 		// Attach the created elements to the shadow dom
 		shadow.appendChild(style);
 		shadow.appendChild(footer);
-		console.log('Style connected:', style.isConnected);
 	}
 }
 
 // Define the new element
 customElements.define('kbsb-footer', Footer);
-
-// <img class="logo-shebang" src="https://www.kaboomshebang.com/logos/shebang_3d_for_web.svg" alt="The Kaboom Shebang">
