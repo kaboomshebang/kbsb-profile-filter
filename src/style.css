@@ -44,36 +44,3 @@ h2, h3 {
 a {
     color: lightgrey;
 }
-
-/* navigation styles */
-/* =================================================== */
-
-.nav {
-    padding: 1rem 0 0 0;
-}
-
-.logo-kaboom {
-    max-width: 10rem;
-}
-
-/* footer styles */
-/* =================================================== */
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    padding: 0.5rem;
-}
-
-.footer-text {
-    font-size: 0.75rem;
-    color: lightgrey;
-}
-
-.logo-shebang {
-    position: fixed;
-    display: block;
-    max-width: 3.5rem;
-    right: 0;
-    bottom: 1rem;
-}

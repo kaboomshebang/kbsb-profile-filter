@@ -9,39 +9,27 @@
     <link href='https://tools-static.wmflabs.org/fontcdn/css?family=IBM+Plex+Sans:300,400,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <!-- Vite settings -->
-    <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
 
-    <!-- default kbsb navigation -->
-    <nav class="container nav">
-        <a href="https://www.kaboomshebang.com/" target='_blank' rel="noopener noreferrer">
-            <img class="logo-kaboom" src="https://www.kaboomshebang.com/logos/kaboom_shebang_logo.svg" alt="Kaboom Shebang">
-        </a>
-    </nav>
+    <!-- default kbsb navigation component -->
+    <kbsb-navbar></kbsb-navbar>
 
+    <kbsb-message data-text="Test">Person by Knut M. Synstad from NounProject.com</kbsb-message>
+    
     
     <section class="section">
         <div class="container">
             <h1 class="heading">
                 Typescript Portfolio Filter
             </h1>
-            <p>Person by Knut M. Synstad from NounProject.com</p>
-            <p>https://thenounproject.com/icon/person-856455/</p>
         </div>
     </section>
-
+    
+    <!-- profile app -->
+    <div id="app"></div>
 
     <!-- default kbsb footer -->
-    <footer class="footer footer-text">
-        <span>
-            Webfonts by: <a href="https://fontcdn.toolforge.org/" target='_blank' rel="noopener noreferrer">FontCDN</a>
-        </span>
-        <span> | </span>
-        <span>
-            Created by <a href="https://www.fredsnyder.net" target='_blank' rel="noopener noreferrer">Fred Snyder</a>
-        </span>
-        <img class="logo-shebang" src="https://www.kaboomshebang.com/logos/shebang_3d_for_web.svg" alt="The Kaboom Shebang">
-    </footer>
+    <kbsb-footer></kbsb-footer>
+
 </body>
 </html>

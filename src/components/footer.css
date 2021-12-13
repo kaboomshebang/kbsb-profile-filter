@@ -1,0 +1,37 @@
+/* footer styles */
+/* =================================================== */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer div {
+    padding: 5px 0;
+}
+
+.footer div div a {
+    display: block;
+    width: 280px;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: lightgrey;
+}
+
+.logo-shebang {
+    position: fixed;
+    display: block;
+    max-width: 3.5rem;
+    right: 0;
+    bottom: 1rem;
+}
