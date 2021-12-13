@@ -20,7 +20,15 @@ vite
 
 # without Vite: just watch for source changes with the Typescript compiler
 tsc --watch
+
+# preview the production build locally
+pnpm run preview # or, vite preview
+
+# build
+pnpm run build
 ```
+
+
 
 ## Typescript version
 
@@ -66,6 +74,7 @@ Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `m
 - [X] Create class for the dev skills
 - [X] Add Typescript as dev-dep
 - [X] Optional: add Vite
+- [ ] Add project to Vercel: https://vitejs.dev/guide/static-deploy.html#vercel
 - [ ] Add methods and logic for the filter states
 - [ ] Create the filter and developer DOM elements
 - [ ] Add styling and basic animations
