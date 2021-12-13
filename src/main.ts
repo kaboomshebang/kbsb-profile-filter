@@ -8,6 +8,7 @@ import './style.css';
 import './components/filterButton';
 import './components/navBar';
 import './components/footer';
+import './components/footerShebang';
 
 // a map of all the unique skills
 // value represents the filter state // default false (inactive)
