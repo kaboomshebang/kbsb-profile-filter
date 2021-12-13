@@ -2,7 +2,7 @@
 
 A profile webpage with filter functionality using Typescript, Vite and PNPM.
 
-- Uses `pnpm`
+- Install PNPM with `npm install -g pnpm`
 - URL coming soon.
 
 ```bash
@@ -29,14 +29,10 @@ pnpm run build
 ```
 
 
-
 ## Typescript version
 
 The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript": "^4.5.3"`.
 
-```js
-// "typescript": "^4.4.4",
-```
 
 ## Vite tsconfig.json settings
 
