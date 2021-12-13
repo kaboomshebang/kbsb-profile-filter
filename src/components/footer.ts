@@ -1,4 +1,44 @@
-import footerCss from './footer.css';
+const footerCss = `
+.footer {
+    position: relative;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer div {
+    padding: 0.3rem 0;
+}
+
+.footer div div a {
+    display: block;
+    width: 230px;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: lightgrey;
+}
+
+@media only screen and (min-width: 400px) {
+    .footer div div a {
+        width: 350px;
+    }
+}
+
+@media only screen and (min-height: 700px) {
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+`;
 
 // Create a class for the element
 class Footer extends HTMLElement {
@@ -51,10 +91,6 @@ class Footer extends HTMLElement {
 
 			footerContainer.appendChild(footerLink);
 		});
-
-		// Take attribute content and put it inside the info span
-		// const text = this.getAttribute('data-text');
-		// info.textContent = text;
 
 		footer.appendChild(footerContainer);
 
