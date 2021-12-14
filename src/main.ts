@@ -1,5 +1,5 @@
 // store data as .ts file and export constant
-import data from './data/data';
+import data from './data/profiles';
 
 // import app logic
 import appLogic from './app/app';

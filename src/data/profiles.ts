@@ -1,4 +1,4 @@
-const data = {
+const profiles = {
 	developers: [
 		{
 			userId: 2531,
@@ -59,4 +59,4 @@ const data = {
 	],
 };
 
-export default data;
+export default profiles;
