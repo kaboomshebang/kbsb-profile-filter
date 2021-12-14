@@ -9,10 +9,10 @@ appLogic(data);
 import './style.css';
 
 // import webcomponents
-import './components/filterButton';
-import './components/navBar';
-import './components/footer';
-import './components/footerShebang';
+import './components/kaboom/navBar';
+import './components/kaboom/footer';
+import './components/kaboom/footerShebang';
+import './components/filterBtn';
 import './components/profile';
 import './components/profiles';
 
