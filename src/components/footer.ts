@@ -16,11 +16,12 @@ const footerCss = `
 .footer div div a {
     display: block;
     width: 230px;
+	color: black;
 }
 
 .footer-text {
     font-size: 0.75rem;
-    color: lightgrey;
+    color: grey;
 }
 
 @media only screen and (min-width: 400px) {
@@ -35,7 +36,7 @@ const footerCss = `
         bottom: 0;
         left: 0;
         padding: 0.5rem;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgb(245, 245, 245);
     }
 }
 `;

@@ -28,7 +28,6 @@ body {
 h1, h2, h3, h4 ,h5, h6 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
-    max-width: 35rem;
     /* rem units scale to the document-root/html element */
 }
 
@@ -39,6 +38,10 @@ h1 {
 
 h2, h3 {
     font-size: 1.25em;
+}
+
+.center {
+    text-align: center;
 }
 
 a {
