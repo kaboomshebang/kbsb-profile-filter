@@ -1,7 +1,12 @@
 /* some basic kbsb styles */
 
+/* global variables */
+:root {
+    --max-width: 800px;
+}
+
 html {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 body {
@@ -13,7 +18,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -28,7 +33,6 @@ body {
 h1, h2, h3, h4 ,h5, h6 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
-    max-width: 35rem;
     /* rem units scale to the document-root/html element */
 }
 
@@ -41,39 +45,16 @@ h2, h3 {
     font-size: 1.25em;
 }
 
+.center {
+    text-align: center;
+}
+
 a {
     color: lightgrey;
 }
 
-/* navigation styles */
-/* =================================================== */
-
-.nav {
-    padding: 1rem 0 0 0;
-}
-
-.logo-kaboom {
-    max-width: 10rem;
-}
-
-/* footer styles */
-/* =================================================== */
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    padding: 0.5rem;
-}
-
-.footer-text {
-    font-size: 0.75rem;
-    color: lightgrey;
-}
-
-.logo-shebang {
-    position: fixed;
-    display: block;
-    max-width: 3.5rem;
-    right: 0;
-    bottom: 1rem;
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 18px;
+    }
 }
