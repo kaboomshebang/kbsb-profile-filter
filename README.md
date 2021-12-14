@@ -31,7 +31,7 @@ pnpm run build
 
 ## Vite tsconfig.json settings
 
-Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `module resolution strategy`. Note: The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript": "^4.5.3"`.
+Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `module resolution strategy`. ~~Note: The Vite scaffold project uses Typescript 4.4.4. This project uses: `"typescript": "^4.5.3"`.~~
 
 ```json
 {
@@ -65,8 +65,8 @@ Add `"moduleResolution": "node",` otherwise the TS compiler complains about a `m
 - [X] Create class for the dev skills
 - [X] Add Typescript as dev-dep
 - [X] Optional: add Vite
-- [ ] Scaffold some WebComponents
-- [ ] Create the filter and developer DOM elements
+- [X] Scaffold some WebComponents
+- [X] Add styling and basic animations
+- [X] Create the filter and developer DOM elements
 - [ ] Add methods and logic for the filter states
-- [ ] Add styling and basic animations
 - [ ] Add project to Vercel: https://vitejs.dev/guide/static-deploy.html#vercel
