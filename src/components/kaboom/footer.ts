@@ -1,44 +1,101 @@
-const footerCss = `
-.footer {
-    position: relative;
-    width: 100%;
-}
+const footerTemplate = document.createElement('template');
 
-.footer-container {
-    max-width: var(--max-width, 1200px);
-    margin: 0 auto;
-}
+const footerLinks = [
+	{
+		label: 'Attribution:',
+		url: 'https://thenounproject.com/icon/person-856455/',
+		content: 'Person by Knut M. Synstad from NounProject.com',
+	},
+	{
+		label: 'Webfonts by:',
+		url: 'https://fontcdn.toolforge.org/',
+		content: 'FontCDN',
+	},
+	{
+		label: 'Created by:',
+		url: 'https://www.fredsnyder.net/',
+		content: 'Fred Snyder',
+	},
+];
 
-.footer div {
-    padding: 0.3rem 0;
-}
+footerTemplate.innerHTML = `
+<style>
+	.footer {
+		position: relative;
+		width: 100%;
+	}
 
-.footer div div a {
-    display: block;
-    width: 230px;
-	color: black;
-}
+	.footer-container {
+		max-width: var(--max-width, 1200px);
+		margin: 0 auto;
+	}
 
-.footer-text {
-    font-size: 0.75rem;
-    color: grey;
-}
+	.button {
+		all: unset;
+		display: none;
+	}
 
-@media only screen and (min-width: 400px) {
-    .footer div div a {
-        width: 350px;
-    }
-}
+	.footer div {
+		padding: 0.3rem 0;
+	}
 
-@media only screen and (min-height: 700px) {
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: 0.5rem;
-        background-color: rgb(245, 245, 245);
-    }
-}
+	.footer div div a {
+		display: block;
+		width: 230px;
+		color: black;
+	}
+
+	.text {
+		font-size: 0.75rem;
+		color: grey;
+	}
+
+	@media only screen and (min-width: 400px) {
+		.footer div div a {
+			width: 350px;
+		}
+	}
+
+	@media only screen and (min-height: 700px) {
+		.footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			padding: 0.5rem;
+			background-color: rgb(245, 245, 245);
+			transition: bottom 1s;
+		}
+
+		.footer[down] {
+			bottom: -400px;
+		}
+
+		.button {
+			display: block;
+			position: fixed;
+			bottom: 150px;
+			left: calc(50% - 35px);
+			width: 50px;
+			padding: 10px;
+			border-radius: 10px;
+			transform: rotate(180deg);
+			cursor: pointer;
+			transition: transform 100ms, bottom 1s;
+			background-color: rgb(245, 245, 245);
+		}
+
+		.footer[down] .button {
+			position: fixed;
+			top: unset;
+			bottom: 5px;
+			transform: rotate(0deg);
+		}
+	}
+</style>
+<footer class="footer text">
+	<img class="button" src="/src/images/arrow.svg" up/>
+	<div class="footer-container"></div>
+</footer>
 `;
 
 // Create a class for the element
@@ -49,31 +106,9 @@ class Footer extends HTMLElement {
 
 		// Create a shadow root
 		const shadow = this.attachShadow({ mode: 'open' });
+		shadow.appendChild(footerTemplate.content.cloneNode(true));
 
-		// Create wrapper
-		const footer = document.createElement('footer');
-		footer.setAttribute('class', 'footer footer-text');
-
-		const footerContainer = document.createElement('div');
-		footerContainer.setAttribute('class', 'footer-container');
-
-		const footerLinks = [
-			{
-				label: 'Attribution:',
-				url: 'https://thenounproject.com/icon/person-856455/',
-				content: 'Person by Knut M. Synstad from NounProject.com',
-			},
-			{
-				label: 'Webfonts by:',
-				url: 'https://fontcdn.toolforge.org/',
-				content: 'FontCDN',
-			},
-			{
-				label: 'Created by:',
-				url: 'https://www.fredsnyder.net/',
-				content: 'Fred Snyder',
-			},
-		];
+		const footerContainer = this.shadowRoot!.querySelector('.footer-container');
 
 		footerLinks.forEach((e) => {
 			const footerLink = document.createElement('div');
@@ -90,19 +125,18 @@ class Footer extends HTMLElement {
 			footerLink.appendChild(linkLabel);
 			footerLink.appendChild(link);
 
-			footerContainer.appendChild(footerLink);
+			footerContainer!.appendChild(footerLink);
 		});
+	}
 
-		footer.appendChild(footerContainer);
+	toggleFooter() {
+		this.shadowRoot!.querySelector('.footer')!.toggleAttribute('down');
+	}
 
-		// Create some CSS to apply to the shadow dom
-		const style = document.createElement('style');
-
-		style.textContent = footerCss;
-
-		// Attach the created elements to the shadow dom
-		shadow.appendChild(style);
-		shadow.appendChild(footer);
+	connectedCallback() {
+		setTimeout(() => this.toggleFooter(), 1000);
+		const footerBtn = this.shadowRoot!.querySelector('.button');
+		footerBtn!.addEventListener('click', () => this.toggleFooter());
 	}
 }
 
