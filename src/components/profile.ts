@@ -8,6 +8,7 @@ template.innerHTML = `
 		display: inline-block;
 		text-align: center;
 		padding: 10px 10px;
+		opacity: 0.2;
 	}
 	.backDrop {
 		padding: 20px 20px;
@@ -19,6 +20,9 @@ template.innerHTML = `
 	.job, .name {
 		position: relative;
 		padding: 10px 0 0 0;
+	}
+	:host([active]) .profileWrapper {
+		opacity: 1;
 	}
 </style>
 

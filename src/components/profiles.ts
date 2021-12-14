@@ -10,10 +10,10 @@ template.innerHTML = `
 </style>
 
 <div class="profilesWrapper">
-	<kbsb-profile name="Fred" job="Designer"></kbsb-profile>
+	<kbsb-profile name="Fred" job="Designer" active></kbsb-profile>
 	<kbsb-profile name="Hans" job="Developer"></kbsb-profile>
 	<kbsb-profile name="John" job="Manager"></kbsb-profile>
-	<kbsb-profile name="Vic" job="Engineer"></kbsb-profile>
+	<kbsb-profile name="Vic" job="Engineer" active></kbsb-profile>
 </div>
 `;
 
