@@ -5,22 +5,29 @@ const template = document.createElement('template');
 template.innerHTML = `
 <style>
 	.profileWrapper {
-		max-width: 300px;
+		display: inline-block;
+		text-align: center;
+		padding: 10px 10px;
+	}
+	.backDrop {
+		padding: 20px 20px;
 		background-color: #eee;
 	}
 	.profileImg {
 		width: 100px;
 	}
+	.job, .name {
+		position: relative;
+		padding: 10px 0 0 0;
+	}
 </style>
 
 <div class="profileWrapper">
-    <div>
+    <div class="backDrop">
         <img class="profileImg" src="${profileSvg}" alt="Profile">
-        <div>Fred</div>
+        <div class="name">Fred</div>
     </div>
-    <div>
-        Developer
-    </div>
+	<div class="job">Unknown</div>
 </div>
 `;
 
@@ -33,6 +40,21 @@ class Profile extends HTMLElement {
 		// create a shadow root
 		const shadow = this.attachShadow({ mode: 'open' });
 		shadow.appendChild(template.content.cloneNode(true));
+
+		// set job attribute
+		if (typeof this.getAttribute('job') === 'string') {
+			//! use exclamation mark to tell TS that this attribute is definitely set
+			shadow.querySelector('.job')!.innerHTML = this.getAttribute('job')!;
+		} else {
+			console.log('Job attr not set');
+		}
+
+		// set name attribute
+		if (typeof this.getAttribute('name') === 'string') {
+			shadow.querySelector('.name')!.innerHTML = this.getAttribute('name')!;
+		} else {
+			console.log('Name attr not set');
+		}
 	}
 }
 
