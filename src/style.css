@@ -1,5 +1,10 @@
 /* some basic kbsb styles */
 
+/* global variables */
+:root {
+    --max-width: 800px;
+}
+
 html {
     font-size: 14px;
 }
@@ -13,7 +18,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 

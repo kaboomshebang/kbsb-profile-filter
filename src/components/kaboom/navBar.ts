@@ -4,7 +4,7 @@ const navTemplate = document.createElement('template');
 navTemplate.innerHTML = `
 <style>
 	nav {
-		max-width: 1200px;
+		max-width: var(--max-width, 800px);
 		margin: 0 auto;
 		padding: 1rem 0 0 0;
 	}

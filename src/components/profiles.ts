@@ -3,7 +3,7 @@ const template = document.createElement('template');
 template.innerHTML = `
 <style>
 	.profilesWrapper {
-		max-width: 800px;
+		max-width: -var(--max-width, 800px);
 		margin: 0 auto;
 		text-align: center;
 	}
