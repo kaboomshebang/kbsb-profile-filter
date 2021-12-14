@@ -24,6 +24,7 @@ class Navigation extends HTMLElement {
 		img.setAttribute('class', 'logo-kaboom');
 		img.setAttribute('alt', 'Kaboom Shebang');
 
+		// instead of using a template you can also just append directly to the shadowDOM
 		// append link and image to the nav element
 		nav.appendChild(link);
 		link.appendChild(img);
@@ -45,7 +46,7 @@ class Navigation extends HTMLElement {
 
 		// attach the styles to the shadow dom
 		shadow.appendChild(style);
-		// attach the top element to the shadow dom
+		// and finally, attach the top element to the shadow dom
 		shadow.appendChild(nav);
 	}
 }
