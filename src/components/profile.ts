@@ -17,9 +17,14 @@ template.innerHTML = `
 	.profileImg {
 		width: 100px;
 	}
-	.job, .name {
-		position: relative;
+	.job {
 		padding: 10px 0 0 0;
+	}
+	.name {
+		margin: 20px 0 0 0;
+		padding: 5px 10px;
+		border-radius: 10px;
+		background-color: white;
 	}
 	:host([active]) .profileWrapper {
 		opacity: 1;
