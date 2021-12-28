@@ -14,11 +14,13 @@ navTemplate.innerHTML = `
 	}
 </style>
 
-<nav>
-	<a href="https://www.kaboomshebang.com/" target="_blank" rel="noopener noreferrer">
-		<slot name="logo" />
-	</a>
-</nav>
+<header>
+	<nav>
+		<a href="https://www.kaboomshebang.com/" target="_blank" rel="noopener noreferrer">
+			<slot name="logo" />
+		</a>
+	</nav>
+</header>
 `;
 
 // create a class for the element
